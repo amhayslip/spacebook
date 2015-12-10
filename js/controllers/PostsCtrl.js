@@ -1,5 +1,5 @@
 angular.module('spacebook')
-  .controller('PostCtrl', [
+  .controller('PostsCtrl', [
     '$scope', 
     '$routeParams',
     'store',

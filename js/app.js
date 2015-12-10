@@ -3,7 +3,7 @@ angular.module('spacebook', ['ngRoute', 'ngResource'])
     'use strict';
 
     var routeConfig = {
-      controller: 'PostCtrl',
+      controller: 'PostsCtrl',
       templateUrl: 'spacebook-index.html',
       resolve: {
         store: function (postStorage) {
