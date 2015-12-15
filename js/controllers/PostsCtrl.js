@@ -16,14 +16,10 @@ angular.module('spacebook')
           return;
         }
 
-        $scope.saving = true;
         store.insert(newPost)
           .then(function success() {
-            $scope.newPost = '';
-          })
-          .finally(function () {
-            $scope.saving = false;
+            $scope.text = '';
+            $scope.user = '';
           });
       }
-
   }])
