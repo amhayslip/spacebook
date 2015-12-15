@@ -1,6 +1,6 @@
 angular.module('spacebook')
   .factory('postStorage', function () {
-    var STORAGE_ID = 'spaceface';
+    var STORAGE_ID = 'spacebook';
 
     var store = {
       posts: [],
