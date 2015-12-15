@@ -5,8 +5,16 @@ angular.module('spacebook')
     var store = {
       posts: [],
 
+      _getFromLocalStorage: function () {
+        return JSON.parse(localStorage.getItem(STORAGE_ID) || '[]');
+      },
+
       _saveToLocalStorage: function (posts) {
         localStorage.setItem(STORAGE_ID, JSON.stringify(posts));
+      },
+
+      get: function () {
+        return angular.copy(store._getFromLocalStorage(), store.posts);
       },
 
       insert: function (post) {
