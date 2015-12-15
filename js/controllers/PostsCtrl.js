@@ -2,9 +2,9 @@ angular.module('spacebook')
   .controller('PostsCtrl', [
     '$scope', 
     '$routeParams',
-    'store',
-    function($scope, $routeParams, store){
-      var posts = $scope.posts = store.posts;
+    'postStorage',
+    function($scope, $routeParams, postStorage){
+      var posts = $scope.posts = postStorage.posts;
 
       $scope.addPost = function (post) {
         var newPost = {
@@ -16,10 +16,6 @@ angular.module('spacebook')
           return;
         }
 
-        store.insert(newPost)
-          .then(function success() {
-            $scope.text = '';
-            $scope.user = '';
-          });
+        postStorage.insert(newPost)
       }
   }])
