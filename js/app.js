@@ -4,12 +4,7 @@ angular.module('spacebook', ['ngRoute', 'ngResource'])
 
     var routeConfig = {
       controller: 'PostsCtrl',
-      templateUrl: 'spacebook-index.html',
-      resolve: {
-        store: function (postStorage) {
-          return postStorage;
-        }
-      }
+      templateUrl: 'spacebook-index.html'
     };
 
     $routeProvider
