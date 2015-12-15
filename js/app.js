@@ -1,5 +1,5 @@
 angular.module('spacebook', ['ngRoute', 'ngResource'])
-  .config(function ($routeProvider) {g
+  .config(function ($routeProvider) {
     var routeConfig = {
       controller: 'PostsCtrl',
       templateUrl: 'spacebook-index.html'
