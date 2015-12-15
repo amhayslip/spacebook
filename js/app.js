@@ -7,11 +7,9 @@ angular.module('spacebook', ['ngRoute', 'ngResource'])
       templateUrl: 'spacebook-index.html',
       resolve: {
         store: function (postStorage) {
-          // Get the correct module (API or localStorage).
-          return postStorage.then(function (module) {
-            module.get(); // Fetch the todo records in the background.
-            return module;
-          });
+          postStorage.get();
+
+          return postStorage;
         }
       }
     };
