@@ -4,10 +4,9 @@ angular.module('spacebook')
     '$routeParams',
     'postStorage',
     function($scope, $routeParams, postStorage){
-      $scope.post = postStorage.posts[$routeParams.id];
+      $scope.post = postStorage.posts[$routeParams.id]
 
       $scope.addComment = function() {
-
         var newComment = {
           text: $scope.text,
           user: $scope.user
