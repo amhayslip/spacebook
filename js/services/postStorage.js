@@ -17,8 +17,20 @@ angular.module('spacebook')
         return angular.copy(store._getFromLocalStorage(), store.posts);
       },
 
-      insert: function (post) {
+      insertPost: function (post) {
         store.posts.push(post);
+
+        store._saveToLocalStorage(store.posts);
+      },
+
+      insertComment: function (comment, postId) {
+        store.posts[postId].comments.push(comment);
+
+        store._saveToLocalStorage(store.posts);
+      },
+
+      delete: function (post) {
+        store.posts.splice(store.posts.indexOf(post), 1);
 
         store._saveToLocalStorage(store.posts);
       }
